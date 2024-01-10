@@ -1,14 +1,14 @@
 
 (*
-Add quotes -- system-wide context menu option for text manipulation.
+Add quotes  system-wide context menu option for text manipulation.
 
-Output -- replaces selected string with double-quoted version of same string.
-Input  -- User has selected a text in an editable text field system-wide.
+Output  replaces selected string with double-quoted version of same string.
+Input   User has selected a text in an editable text field system-wide.
 
-An Automator Mac App 'workflow' code fragment--
+An Automator Mac App 'workflow' code fragment
 
-Draft version-- Documentation, codes style and refactoring are works in progress.
-Tested -- in Script Editor app, Mac Os 10.15
+Draft version Documentation, codes style and refactoring are works in progress.
+Tested   in Script Editor app, Mac Os 10.15
 
 Basic setup 
 Open 'Automator' app.
@@ -24,4 +24,13 @@ There is a process of saving the 'workflow' and registering it as a system servi
 
 *)
 
-on run {input, parameters}	if input is {} then		display dialog "No text is selected."	else		set theSelection to input as text		set theSelection to "\"" & theSelection & "\""		set the clipboard to theSelection		return theSelection	end ifend run
+on run {input, parameters}
+	if input is {} then
+		display dialog "No text is selected."
+	else
+		set theSelection to input as text
+		set theSelection to "\"" & theSelection & "\""
+		set the clipboard to theSelection
+		return theSelection
+	end if
+end run
